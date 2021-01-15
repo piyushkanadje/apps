@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse  justify-content-end nav-item" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active selected" aria-current="page" href="/home-page">HOME</a>
+            <a class="nav-link active selected" aria-current="page" href="/">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link selected" href="/about-page">ABOUT US</a>
