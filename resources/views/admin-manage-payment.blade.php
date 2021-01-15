@@ -16,12 +16,12 @@
             </form>
 
         </div>
-        <div class="col-md-6 col-sm-12 col-12">
-            <p class="pay">
-                <b>
+        <div class="col-md-6 col-sm-12 col-12 btn-c">
+            <p class="pay ">
+                
                     Total <br>
                     Payment
-                </b>
+            
             </p>
         </div>
     </div>

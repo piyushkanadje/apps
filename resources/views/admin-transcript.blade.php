@@ -47,9 +47,9 @@
 </div> -->
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-12 col-sm-6">
+        <div class="col-md-6 col-12 col-sm-6 ">
             <h4 class="my-5"> Transcript Orders</h4>
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-3">
                     <h6 class="color-3">
                         ORDER BY
@@ -167,9 +167,9 @@
             <hr class="row-hr">
         </div>
 
-        <div class="col-md-6 col-12 col-sm-6 pl-3">
-            <div class="row">
-                <h3 class=my-5>
+        <div class="col-md-6 col-12 col-sm-6 pl-3 mt-3">
+            <div class="row btn-c">
+                <h3 class="mx-5 my-5">
                     TOTAL <br>
                     PAYMENT
                 </h3>
@@ -190,7 +190,7 @@
 
             <div class="row ">
                 <div class="col-md-3">
-                    <h6 class="color-3">
+                    <h6 class="color-3 ">
                         ORDER BY
                     </h6>
                     <p>

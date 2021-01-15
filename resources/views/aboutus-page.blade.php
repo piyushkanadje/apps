@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="row">
-        <img src="/images/step1.png" alt="">
+        <img src="/images/step1.png" class="img-fluid row-img-" alt="">
     </div>
     <div class="row">
         <div class="col-md-6 col-12 col-sm-12 step-cont">
@@ -87,7 +87,7 @@
     </div>
     <div class="row">
         <div>
-            <img src="/images/step2.png" alt="">
+            <img src="/images/step2.png" class="img-fluid row-img-2" alt="">
         </div>
     </div>
     <div class="row">

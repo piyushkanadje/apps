@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-5 ">
         <div class="col-md-6 col-sm-12 col-12">
-            <div class="row ml-2">
+            <div class="row border-shadow ">
                 <h4>Ongoing Order</h4>
-                <div class="row mt-2">
-                    <div class="col-md-3">
+                <div class="row mt-2 row-up">
+                    <div class="col-md-3 " class="">
                         <h6 class="color-3">
                             ORDER BY
                         </h6>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mt-2 ">
                     <div class="col-md-8">
                         <h6 class="color-3">
                             DELIVERY ADDRESS
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="row mt-5 ml-2">
+            <div class="row mt-5 border-shadow">
                 <h4>Contact Details</h4>
                 <div class="row mt-2">
                     <div class="col-md-4">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12 col-12">
+        <div class="col-md-6 col-sm-12 col-12 border-shadow">
             <img src="/images/img2.png" class="img-fluid stand-img" alt="">
         </div>
     </div>

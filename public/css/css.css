@@ -12,6 +12,7 @@ footer {
     box-shadow: -2px 2px 12px 0px rgba(0, 0, 0, 0.87);
 }
 
+
 footer a:hover {
     text-decoration: none;
 }
@@ -39,7 +40,8 @@ footer a:hover {
 /* common */
 
 .btn-p {
-    padding: 20px !important;
+    padding: 10px !important;
+    width: 40%;
     
 }
 .width-2{
@@ -167,9 +169,24 @@ footer a:hover {
     width: 100%;
 }
 .detail-card{
-  
+  padding:20px 50px;
+  height: 350px;
+  /* border: 1px solid black; */
+}
 
-  border: 1px solid black;
+.detail-head{
+    font-family: Arial;
+    color: black;
+    font-size: 14px;
+    margin: 20px;
+}
+.details-view{
+    display: flex;
+    margin: auto;
+}
+.detail-body
+{
+    font-size: 20px;
 }
 
 /* apply */
@@ -194,6 +211,7 @@ footer a:hover {
     resize: none;
     width: 100%;
     height: 100px;
+    padding: 10px;
 }
 
 .apply {
@@ -201,6 +219,9 @@ footer a:hover {
     /* margin: 50px; */
     background-color: white !important;
     border-radius: 10px;
+}
+.contact-map{
+    padding: 30px;
 }
 
 /* 
@@ -263,6 +284,10 @@ button.btn.btn-link.collapsed:after {
     font-weight: bold;
     font-size: 146px;
 }
+.row-img-1{
+    width: 70%;
+    margin: auto;
+}
 
 .user {
     margin-left: 200px !important;
@@ -285,7 +310,10 @@ button.btn.btn-link.collapsed:after {
    .nav-li{
     display: inline-block;
    } */
-
+   .navigation-admin{
+    margin-left: 10px;
+    font-size: 20px;
+}
 .nav-li {
     text-decoration: none;
     color: black;
@@ -295,6 +323,13 @@ button.btn.btn-link.collapsed:after {
     text-decoration: none;
 }
 
+/* admin layout */
+.flex-r{
+    margin-left: auto;
+}
+.nav-img{
+    width: 30px;
+}
 /* admin-manage-payment */
 
 .icon-img {
@@ -407,7 +442,16 @@ input[type="checkbox"]{
   }
 
 
-
+/* user-ongoing */
+.row-up{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.border-right
+{
+    border: none;
+    border-right: 1px solid gray;
+}
 
 /* 
 user-raise */
@@ -436,6 +480,7 @@ user-raise */
     width: 100%;
     resize: none;
     height: 100px;
+    padding: 10px;
 }
 
 /* user-profile */

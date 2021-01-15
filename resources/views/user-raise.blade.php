@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                        <button class="btn-primary btn" type="submit">Submit</button>
+                        <button class="btn-p btn-c btn" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -35,7 +35,7 @@
 </div>
 <hr>
 <div class="container">
-        <h4>Query History
+        <h4 class="mt-5 mb-5">Query History
         </h4>
         <table class="table">
             <thead>

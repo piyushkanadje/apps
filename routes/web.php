@@ -31,7 +31,7 @@ Route::get('/contact-page', [BootController::class, 'contact']);
 Route::get('/login-page', [BootController::class, 'login']);
 Route::get('/register-page', [BootController::class, 'register']);
 Route::get('logout', 'App\Http\Controllers\BootController@logout');
-Route::get('logout', 'App\Http\Controllers\BootController@logout');
+
 // Route::get('/user-profile', [BootController::class, 'user_profile']);
 
 
@@ -44,6 +44,7 @@ Route::middleware(['auth','auth:sanctum'])->group(function () {
   Route::get('/user-payment', [BootController::class, 'user_payment']);
   Route::get('/user-raise', [BootController::class, 'user_raise']);
   Route::get('/user-profile', [BootController::class, 'user_profile']);
+  
  
 });
 
@@ -56,7 +57,7 @@ Route::middleware(['authadmin', 'auth:sanctum'])->group(function () {
   Route::get('/admin-manage-order-ongoing', [BootController::class, 'admin_manage_order_ongoing']);
   Route::get('/admin-manage-order-completed', [BootController::class, 'admin_manage_order_completed']);
   Route::get('/admin-manage-user', [BootController::class, 'admin_manage_user']);
-  Route::get('/admin-manage-payment', [BootController::class, 'admin_manage_payment']);
+
   
 });
 
