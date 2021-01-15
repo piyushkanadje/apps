@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Model\Boot;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -95,5 +96,10 @@ class BootController extends Controller
     public function user_profile()
     {
         return view('user-profile');
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+        // return view('pages.home');
     }
 }

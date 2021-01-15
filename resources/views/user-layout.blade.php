@@ -45,7 +45,10 @@
         <a class="nav-link" href="/user-profile">USER NAME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a href="logout" class="nav-link">
+          <i class="nav-icon far fa-circle text-danger"></i>
+          <p class="text">Logout</p>
+        </a>
       </li>
     </ul>
   </div>

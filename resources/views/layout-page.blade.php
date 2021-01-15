@@ -50,7 +50,13 @@
           <li class="nav-item">
             <a class="nav-link selected" href="/contact-page">CONTACT</a>
           </li>
-          
+
+            <li class="nav-item">
+            <a class="nav-link selected" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link selected" href="/register">Register</a>
+          </li>
           <form class="form-inline my-2 my-lg-0">
 
             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">SIGN UP</button>
