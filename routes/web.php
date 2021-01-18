@@ -57,10 +57,9 @@ Route::middleware(['authadmin', 'auth:sanctum'])->group(function () {
   Route::get('/admin-manage-order-ongoing', [BootController::class, 'admin_manage_order_ongoing']);
   Route::get('/admin-manage-order-completed', [BootController::class, 'admin_manage_order_completed']);
   Route::get('/admin-manage-user', [BootController::class, 'admin_manage_user']);
-
-  
 });
 
+Route::resources('apply', 'App\Http\Controllers\ApplyController');
 
 
 
