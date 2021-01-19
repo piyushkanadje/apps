@@ -11,7 +11,7 @@
             </h2>
             <form class="example" action="action_page.php">
                 <img src="/images/mask.jpg" class="icon-img" alt="">
-                <input type="text" class="input-field" placeholder="Search.." name="search">
+                <input type="search" class="input-field" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
 

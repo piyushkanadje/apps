@@ -9,16 +9,16 @@
         <div class="container">
             <div class="apply">
                 <h2 class="color-3 m-top-o text-center"> <b> APPLICATION FORM</b></h2>
-
-                @if (Session::get('status'))
+{{-- 
+                @if (Session::get('apply_create'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ Session::get('status') }}
+                        {{ Session::get('apply_create') }}
                         <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Ok</button> -->
                     </div>
 
-                @endif
+                @endif --}}
 
-                <form action="" method="POST">
+                <form action="{{ route('apply.create') }}" method="POST">
                     @csrf
                     <h4 class="color-3 m-tb ">PERSONAL DETAILS</h4>
                     <div class="row my-2">
@@ -26,7 +26,7 @@
                         <div class="col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label for="name" class="text-secondary">Name</label>
-                                <input type="text" class="form-control input" id="name" aria-describedby=""
+                                <input type="text" name="name" class="form-control input" aria-describedby=""
                                     placeholder="Enter Name">
                             </div>
                         </div>
@@ -52,8 +52,9 @@
                     <h4 class="color-3 m-tb ">UNIVERSITY DETAILS</h4>
                     <div class="row my-2">
                         <div class="col-md-6 col-sm-12 col-12">
+
                             <label for="university">University / Institute</label><br>
-                            <select name="univesity" class="select-inp">
+                            <select name="university" class="select-inp">
                                 <option value="select-1">Select 1</option>
                                 <option value="select-2">Select 2</option>
                                 <option value="select-3">Select 3</option>
@@ -61,8 +62,8 @@
                             </select>
                         </div>
                         <div class="col-md-4 col-sm-12 col-12">
-                            <label for="course">Course</label><br>
-                            <select name="cource" class="select-inp">
+                            <label for="cource">Course</label><br>
+                            <select name="course" class="select-inp">
                                 <option value="select-1" class="select-inp">Select 1</option>
                                 <option value="select-2" class="select-inp">Select 2</option>
                                 <option value="select-3" class="select-inp">Select 3</option>
@@ -115,8 +116,10 @@
                         </div>
                     </div>
                     <div class="text-center my-5">
-                        <a href="#" class="btn btn-p btn-c width-2" role="button" type="submit">PROCEED TO PAYMENT
-                        </a>
+                        {{-- <a href="#" class="btn btn-p btn-c width-2" role="button"
+                            type="submit">PROCEED TO PAYMENT
+                        </a> --}}
+                        <button type="submit"> Done</button>
                     </div>
 
                 </form>

@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\ApplyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BootController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TaskController;
 use App\Http\Livewire\Admin\AdmiinDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Models\Apply;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,9 +60,12 @@ Route::middleware(['authadmin', 'auth:sanctum'])->group(function () {
   Route::get('/admin-manage-order-ongoing', [BootController::class, 'admin_manage_order_ongoing']);
   Route::get('/admin-manage-order-completed', [BootController::class, 'admin_manage_order_completed']);
   Route::get('/admin-manage-user', [BootController::class, 'admin_manage_user']);
+  Route::get('/admin-manage-payment', [BootController::class, 'admin_manage_payment']);   
 });
 
-Route::resources('apply', 'App\Http\Controllers\ApplyController');
+// Route::get('/',[ApplyController::class,'create'])->name('apply.create');
+Route::Post('/post-apply-created',[ApplyController::class,'create'])->name('apply.create');
+Route::Post('/post-contact-created',[ContactController::class,'create'])->name('contact.create');
 
 
 

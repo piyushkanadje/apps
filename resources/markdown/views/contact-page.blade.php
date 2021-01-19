@@ -11,19 +11,20 @@
             <div class="apply">
                 <h2 class="color-3 m-top-o text-center"> <b> APPLICATION FORM</b></h2>
 
-                <form action="" method="POST">
+                <form action="{{route('contact.create')}}" method="POST">
+                    @csrf
                     <div class="row mt-5">
                         <div class="col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="name" class="text-secondary">Name</label>
-                                <input type="text" class="form-control input" id="" aria-describedby=""
+                                <label for="Coname" class="text-secondary">Name</label>
+                                <input type="text" name="Coname" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Name">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="mobile no" class="text-secondary">Mobile Number</label>
-                                <input type="text" class="form-control input" id="" aria-describedby=""
+                                <label for="Comobile" class="text-secondary">Mobile Number</label>
+                                <input type="text"  name="Comobile"  class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Mobile">
                             </div>
                         </div>
@@ -31,8 +32,8 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="email" class="text-secondary">Email</label>
-                                <input type="email" class="form-control input" id="" aria-describedby=""
+                                <label for="Coemail" class="text-secondary">Email</label>
+                                <input type="email" name="Coemail" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Email">
                             </div>
                         </div>
@@ -40,8 +41,8 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="subject" class="text-secondary">Subject</label>
-                                <input type="text" class="form-control input" id="" aria-describedby=""
+                                <label for="Cosubject"  class="text-secondary">Subject</label>
+                                <input type="text" name="Cosubject" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Subject">
                             </div>
                         </div>
@@ -49,13 +50,14 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="message" class="text-secondary">Message</label>
-                                <textarea name="message" id="" class="input-text" placeholder="Message"></textarea>
+                                <label for="Comessage" class="text-secondary">Message</label>
+                                <textarea name="Comessage" id="" class="input-text" placeholder="Message"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="text-center my-5">
-                        <a href="#" class="btn btn-p btn-c width-2" role="button">SEND</a>
+                        {{-- <a href="#" class="btn btn-p btn-c width-2" role="button">SEND</a> --}}
+                        <button type="submit"> Done</button>
                     </div>
 
 
