@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -41,25 +41,24 @@
           <li class="nav-item">
             <a class="nav-link selected" href="/about-page">ABOUT US</a>
           </li>
-          <li class="nav-item">
+          @if (Auth::check())
+           <li class="nav-item">
             <a class="nav-link selected" href="/apply-page">APPLY NOW</a>
-          </li>
+           </li>
+          @else
+             <li class="nav-item">
+                    <a class="nav-link selected apply" onclick="onApply()">APPLY NOW</a>
+               </li>
+            @endif
+          
           <li class="nav-item">
             <a class="nav-link selected" href="/faq-page">FAQ's </a>
           </li>
           <li class="nav-item">
             <a class="nav-link selected" href="/contact-page">CONTACT</a>
           </li>
-
-            <li class="nav-item">
-            <a class="nav-link selected" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link selected" href="/register">Register</a>
-          </li>
           <form class="form-inline my-2 my-lg-0">
-
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">SIGN UP</button>
+          <a href="/register" class="btn btn-outline-secondary my-2 my-sm-0">SIGN UP</a>  
           </form>
 
         </ul>
@@ -125,7 +124,12 @@
 
 
 
-
+<script>
+function onApply(){
+  alert('Login First');
+  window.location.href="/login";
+}
+</script>
 
   </footer>
 

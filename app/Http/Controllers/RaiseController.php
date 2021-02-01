@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Contact;
+
+use App\Models\Raise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
 
-class ContactController extends Controller
+class RaiseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-    
+        $users = DB::select('select * from raises');
+        return view('/user-raise',['users'=>$users]);
     }
 
     /**
@@ -26,22 +28,18 @@ class ContactController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'mobileno' => 'required',
-            'email' => 'required',
             'subject' => 'required',
             'message' => 'required',
-          
        ]);
-    $contact =Contact::insert([
-        'Coname' => $request->name,
-        'Comobile' => $request->mobileno,
-        'Coemail' => $request->email,
-        'Cosubject' => $request->subject,
-       'Comessage'=>$request->message,
-     ]);      
-     return  redirect('/contact-page')->with('success', 'Project aangepast');
+       $raise =Raise::insert([
+        'subject' => $request->subject,
+        'message' => $request->message,
+     ]);
+       
+     return  redirect('/user-raise')->with('success', 'Project aangepast');
+
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -56,10 +54,10 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Raise  $raise
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contacts)
+    public function show(Raise $raise)
     {
         //
     }
@@ -67,10 +65,10 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Raise  $raise
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contacts)
+    public function edit(Raise $raise)
     {
         //
     }
@@ -79,10 +77,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Raise  $raise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contacts)
+    public function update(Request $request, Raise $raise)
     {
         //
     }
@@ -90,11 +88,16 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Raise  $raise
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contacts)
+    public function destroy(Raise $raise)
     {
         //
     }
 }
+
+// $userId = Auth::user()->id;
+// // $userdata= User::where(['id'=> $userId])->first();
+// $apply =Apply::where(['id'=> $userId])->first();
+// return view ('/user-transcript-current',compact('apply'=>$apply));

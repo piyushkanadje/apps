@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>User App</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -80,7 +80,7 @@
       </ul>
       <ul class="flex-r navbar-nav">
           <li class="nav-item">
-              <a class="nav-link white" href="/user-profile">USER NAME</a>
+              <a class="nav-link white user-name" href="/user-profile">{{Auth::user()->name}}</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="logout"><img src="/images/nav5.png" class="nav-img" alt=""></a>

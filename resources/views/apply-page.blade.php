@@ -2,6 +2,7 @@
 
 @section('content')
     <link rel="stylesheet" href="/css/login.css">
+    
     <div>
         <br><br><br>
     </div>
@@ -9,7 +10,7 @@
         <div class="container">
             <div class="apply">
                 <h2 class="color-3 m-top-o text-center"> <b> APPLICATION FORM</b></h2>
-{{-- 
+                {{--
                 @if (Session::get('apply_create'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ Session::get('apply_create') }}
@@ -28,6 +29,9 @@
                                 <label for="name" class="text-secondary">Name</label>
                                 <input type="text" name="name" class="form-control input" aria-describedby=""
                                     placeholder="Enter Name">
+                                @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-12">
@@ -35,6 +39,9 @@
                                 <label for="mobile" class="text-secondary">Mobile Number</label>
                                 <input type="text" name="mobile" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Mobile">
+                                @error('mobile')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -45,6 +52,9 @@
                                 <label for="email" class="text-secondary">Email</label>
                                 <input type="text" name="email" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Email">
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -91,6 +101,9 @@
                                 <label for="sets" class="text-secondary">Number of Sets</label>
                                 <input type="number" name="sets" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Number Sets">
+                                @error('sets')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-12 col-12">
@@ -102,6 +115,9 @@
                                 </label>
                                 <input type="text" class="form-control input" name="shipping" id="" aria-describedby=""
                                     placeholder="Enter Shipping Type">
+                                @error('shipping')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
@@ -112,6 +128,9 @@
                                 <label for="delivery" class="text-secondary">Delivery Address 1
                                 </label>
                                 <textarea name="delivery" id="" class="input-text"></textarea>
+                                @error('delivery')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -120,13 +139,15 @@
                             type="submit">PROCEED TO PAYMENT
                         </a> --}}
                         <button type="submit"> Done</button>
+                        {{-- @if (Auth::check())
+                            <button type="submit"> APPLY</button>
+                        @else
+                            <button type="submit" id="alertlogin" onclick="myfunction()">Done</button>
+                        @endif --}}
                     </div>
 
                 </form>
             </div>
-
-
-
         </div>
     </div>
     <div class="div">

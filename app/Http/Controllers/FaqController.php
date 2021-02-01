@@ -1,21 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Contact;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Validator;
 
-class ContactController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-    
+    public function index() {
+        $users = DB::table('faqs')->select('faqtitle','faqdescription')->get();
+        return view('/faq-page',['users'=>$users]);
     }
 
     /**
@@ -26,22 +25,19 @@ class ContactController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'mobileno' => 'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'message' => 'required',
-          
+            'title' => 'required',
+            'description' => 'required',
        ]);
-    $contact =Contact::insert([
-        'Coname' => $request->name,
-        'Comobile' => $request->mobileno,
-        'Coemail' => $request->email,
-        'Cosubject' => $request->subject,
-       'Comessage'=>$request->message,
-     ]);      
-     return  redirect('/contact-page')->with('success', 'Project aangepast');
+       $raise =Faq::insert([
+        'faqtitle' => $request->title,
+        'faqdescription' => $request->description,
+     ]);
     }
+    public function insertfaq()
+    {
+        return view('insertfaq');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -56,21 +52,20 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contacts)
-    {
-        //
+     function show(){    
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contacts)
+    public function edit(Faq $faq)
     {
         //
     }
@@ -79,10 +74,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contacts)
+    public function update(Request $request, Faq $faq)
     {
         //
     }
@@ -90,10 +85,10 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contacts  $contacts
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contacts)
+    public function destroy(Faq $faq)
     {
         //
     }

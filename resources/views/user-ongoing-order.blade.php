@@ -7,6 +7,7 @@
         <div class="col-md-6 col-sm-12 col-12">
             <div class="row border-shadow ">
                 <h4>Ongoing Order</h4>
+
                 <div class="row mt-2 row-up">
                     <div class="col-md-3 " class="">
                         <h6 class="color-3">
@@ -55,8 +56,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-5 border-shadow">
+          <div class="row mt-5 border-shadow">
                 <h4>Contact Details</h4>
                 <div class="row mt-2">
                     <div class="col-md-4">
@@ -87,6 +87,9 @@
         <div class="col-md-6 col-sm-12 col-12 border-shadow">
             <img src="/images/img2.png" class="img-fluid stand-img" alt="">
         </div>
+    </div>
+    <div class="row">
+       <a href="/apply-page" class="text-center  btn btn-primary" type="submit">Apply</a>
     </div>
 </div>
 

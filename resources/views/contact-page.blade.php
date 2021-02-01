@@ -9,49 +9,67 @@
 
         <div class="col-con">
             <div class="apply">
-                <h2 class="color-3 m-top-o text-center"> <b> APPLICATION FORM</b></h2>
+                <h2 class="color-3 m-top-o text-center"> <b> CONTACTUS FORM</b></h2>
 
                 <form action="{{route('contact.create')}}" method="POST">
                     @csrf
                     <div class="row mt-5">
                         <div class="col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="Coname" class="text-secondary">Name</label>
-                                <input type="text" name="Coname" class="form-control input" id="" aria-describedby=""
+                                {{-- <label for="name" class="text-secondary">Name</label>
+                                <input type="text" name="name" class="form-control input" id="" aria-describedby=""
+                                    placeholder="Enter Name"> --}}
+                                    <label for="name" class="text-secondary">Name</label>
+                                <input type="text" name="name" class="form-control input" aria-describedby=""
                                     placeholder="Enter Name">
+                                    @error('name')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="Comobile" class="text-secondary">Mobile Number</label>
-                                <input type="text"  name="Comobile"  class="form-control input" id="" aria-describedby=""
+                                <label for="mobileno" class="text-secondary">Mobile Number</label>
+                                <input type="text"  name="mobileno"  class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Mobile">
+                                    @error('mobileno')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="Coemail" class="text-secondary">Email</label>
-                                <input type="email" name="Coemail" class="form-control input" id="" aria-describedby=""
+                                <label for="email" class="text-secondary">Email</label>
+                                <input type="email" name="email" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Email">
+                                    @error('email')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="Cosubject"  class="text-secondary">Subject</label>
-                                <input type="text" name="Cosubject" class="form-control input" id="" aria-describedby=""
+                                <label for="subject"  class="text-secondary">Subject</label>
+                                <input type="text" name="subject" class="form-control input" id="" aria-describedby=""
                                     placeholder="Enter Subject">
+                                    @error('subject')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-12">
                             <div class="form-group">
-                                <label for="Comessage" class="text-secondary">Message</label>
-                                <textarea name="Comessage" id="" class="input-text" placeholder="Message"></textarea>
+                                <label for="message" class="text-secondary">Message</label>
+                                <textarea name="message" id="" class="input-text" placeholder="Message"></textarea>
+                                @error('message')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                             </div>
                         </div>
                     </div>

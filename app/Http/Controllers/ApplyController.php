@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Models\Apply;
+use App\View\Components\AppLayout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+use Validator;
 
 class ApplyController extends Controller
 {
@@ -13,7 +18,7 @@ class ApplyController extends Controller
      */
     public function index()
     {
-        return view('/apply-page');
+        
     }
 
     /**
@@ -23,18 +28,54 @@ class ApplyController extends Controller
      */
     public function create(Request $request)
     {
-        $apply = new Apply();
-        $apply->name=$request->input('name');
-        $apply->mobile=$request->input('mobile');
-        $apply->email=$request->input('email');
-        $apply->university=$request->input('university');
-        $apply->course=$request->input('course');
-        $apply->passing=$request->input('passing');
-        $apply->sets=$request->input('sets');
-        $apply->shipping=$request->input('shipping');
-        $apply->delivery=$request->input('delivery');
-        $apply->save();
+        // $valdateData = $request->validate([
+        //      'name' => 'required|name',
+        //      'mobile' => 'required|mobile',
+        //      'email' => 'required|email',
+        //      'sets' => 'required|sets',
+        //      'shipping' => 'required|shipping',
+        //      'delivery' => 'required|delivery',
+        // ]);
+        // dd(Auth::user()->id);
+        $request->validate([
+            'name' => 'required',
+            'mobile' => 'required',
+            'email' => 'required',
+            'sets' => 'required',
+            'shipping' => 'required',
+            'delivery' => 'required',
+            
+       ]);
+        // $apply = new Apply();
+        // $apply->name=$request->input('name');
+        // $apply->mobile=$request->input('mobile');
+        // $apply->email=$request->input('email');
+        // $apply->university=$request->input('university');
+        // $apply->course=$request->input('course');
+        // $apply->passing=$request->input('passing');
+        // $apply->sets=$request->input('sets');
+        // $apply->shipping=$request->input('shipping');
+        // $apply->delivery=$request->input('delivery');
+        // $apply->save();
+        // return  redirect('/apply-page')->with('success', 'Project aangepast'); 
+
+        $apply = Apply::insert([
+           'name' => $request->name,
+           'mobile' => $request->mobile,
+           'email' => $request->email,
+           'university' => $request->university,
+           'course' => $request->course,
+           'passing' => $request->passing,
+           'sets' => $request->sets,
+           'shipping' => $request->shipping,
+           'delivery' => $request->delivery,
+           'userid' => Auth::user()->id,
+           
+        ]);
         return  redirect('/apply-page')->with('success', 'Project aangepast'); 
+      
+    }
+    
     }
    
 
@@ -44,7 +85,7 @@ class ApplyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+   function store(Request $request)
     {
         //
     }
@@ -55,7 +96,7 @@ class ApplyController extends Controller
      * @param  \App\Models\Apply  $apply
      * @return \Illuminate\Http\Response
      */
-    public function show(Apply $apply)
+   function show(Apply $apply)
     {
         //
     }
@@ -66,7 +107,7 @@ class ApplyController extends Controller
      * @param  \App\Models\Apply  $apply
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apply $apply)
+    function edit(Apply $apply)
     {
         //
     }
@@ -78,7 +119,7 @@ class ApplyController extends Controller
      * @param  \App\Models\Apply  $apply
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Apply $apply)
+    function update(Request $request, Apply $apply)
     {
         //
     }
@@ -89,8 +130,8 @@ class ApplyController extends Controller
      * @param  \App\Models\Apply  $apply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Apply $apply)
+     function destroy(Apply $apply)
     {
         //
     }
-}
+
